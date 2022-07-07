@@ -1,43 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.7.5 on linux)" generated="20220627 10:16:35.774" rpa="true" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.7.5 on linux)" generated="20220707 09:49:23.567" rpa="true" schemaversion="3">
 <suite id="s1" name="Tasks" source="/home/maaofficial/Documents/Automation/RobotFramework/test_robot/tasks.robot">
-<test id="s1-t1" name="Main" line="55">
+<test id="s1-t1" name="Main" line="94">
+<kw name="Create Excel Report">
+<kw name="Create Workbook" library="RPA.Excel.Files">
+<arg>/home/maaofficial/Documents/test_report_2.xlsx</arg>
+<doc>Create and open a new Excel workbook.</doc>
+<status status="PASS" starttime="20220707 09:49:26.003" endtime="20220707 09:49:26.014"/>
+</kw>
+<kw name="Save Workbook" library="RPA.Excel.Files">
+<doc>Save the active workbook.</doc>
+<status status="PASS" starttime="20220707 09:49:26.015" endtime="20220707 09:49:26.047"/>
+</kw>
+<status status="PASS" starttime="20220707 09:49:26.000" endtime="20220707 09:49:26.049"/>
+</kw>
 <kw name="Open Available Browser" library="RPA.Browser.Selenium">
 <doc>Attempts to open a browser on the user's device from a set of
 supported browsers. Automatically downloads a corresponding webdriver
 if none is already installed.</doc>
-<msg timestamp="20220627 10:16:38.148" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<msg timestamp="20220627 10:16:38.185" level="INFO">Created download root directory: /home/maaofficial/.robocorp/webdrivers</msg>
-<msg timestamp="20220627 10:16:38.187" level="INFO">Created symlink directory: /home/maaofficial/.robocorp/webdrivers</msg>
-<msg timestamp="20220627 10:16:38.189" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<msg timestamp="20220627 10:16:40.343" level="INFO">Created Chrome browser with arguments: --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
-<msg timestamp="20220627 10:16:40.344" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+<msg timestamp="20220707 09:49:26.053" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20220707 09:49:26.092" level="INFO">Created download root directory: /home/maaofficial/.robocorp/webdrivers</msg>
+<msg timestamp="20220707 09:49:26.094" level="INFO">Created symlink directory: /home/maaofficial/.robocorp/webdrivers</msg>
+<msg timestamp="20220707 09:49:26.096" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20220707 09:49:28.087" level="INFO">Created Chrome browser with arguments: --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20220707 09:49:28.089" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
 &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<status status="PASS" starttime="20220627 10:16:38.146" endtime="20220627 10:16:40.345"/>
+<status status="PASS" starttime="20220707 09:49:26.050" endtime="20220707 09:49:28.099"/>
 </kw>
 <kw name="Read Excel">
 <kw name="Open Workbook" library="RPA.Excel.Files">
 <arg>/home/maaofficial/Documents/test_escape_list.xlsx</arg>
 <doc>Open an existing Excel workbook.</doc>
-<msg timestamp="20220627 10:16:40.411" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7f8ed7924690&gt;</msg>
-<status status="PASS" starttime="20220627 10:16:40.360" endtime="20220627 10:16:40.416"/>
+<msg timestamp="20220707 09:49:28.113" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7fdd2aace590&gt;</msg>
+<msg timestamp="20220707 09:49:28.180" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7fdd2a684050&gt;</msg>
+<status status="PASS" starttime="20220707 09:49:28.105" endtime="20220707 09:49:28.181"/>
 </kw>
 <kw name="Read Worksheet" library="RPA.Excel.Files">
 <var>${list}</var>
 <arg>header=true</arg>
 <doc>Read the content of a worksheet into a list of dictionaries.</doc>
-<msg timestamp="20220627 10:16:40.427" level="INFO">${list} = [{'make': 'Tesla', 'model': 'Model 3', 'max_km': 20000}, {'make': 'Ford', 'model': 'Mustang', 'max_km': 60000}, {'make': 'Porsche', 'model': 911, 'max_km': 20000}]</msg>
-<status status="PASS" starttime="20220627 10:16:40.424" endtime="20220627 10:16:40.427"/>
+<msg timestamp="20220707 09:49:28.184" level="INFO">${list} = [{'make': 'Tesla', 'model': 'Model 3', 'max_km': 20000}, {'make': 'Ford', 'model': 'Mustang', 'max_km': 60000}, {'make': 'Porsche', 'model': 911, 'max_km': 20000}]</msg>
+<status status="PASS" starttime="20220707 09:49:28.182" endtime="20220707 09:49:28.185"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${list}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220627 10:16:40.428" endtime="20220627 10:16:40.435"/>
+<status status="PASS" starttime="20220707 09:49:28.187" endtime="20220707 09:49:28.188"/>
 </kw>
 <kw name="Close Workbook" library="RPA.Excel.Files">
 <doc>Close the active workbook.</doc>
-<msg timestamp="20220627 10:16:40.438" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7f8ed7924690&gt;</msg>
-<status status="PASS" starttime="20220627 10:16:40.436" endtime="20220627 10:16:40.439"/>
+<msg timestamp="20220707 09:49:28.194" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7fdd2a684050&gt;</msg>
+<status status="PASS" starttime="20220707 09:49:28.189" endtime="20220707 09:49:28.195"/>
 </kw>
 <for flavor="IN">
 <var>${index}</var>
@@ -49,165 +62,294 @@ if none is already installed.</doc>
 <kw name="Go To" library="RPA.Browser.Selenium">
 <arg>%{C_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220627 10:16:40.449" level="INFO">Opening url 'https://carvago.com/'</msg>
-<status status="PASS" starttime="20220627 10:16:40.444" endtime="20220627 10:16:52.328"/>
+<msg timestamp="20220707 09:49:28.202" level="INFO">Opening url 'https://carvago.com/'</msg>
+<status status="PASS" starttime="20220707 09:49:28.201" endtime="20220707 09:49:39.093"/>
 </kw>
 <kw name="Maximize Browser Window" library="RPA.Browser.Selenium">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220627 10:16:52.329" endtime="20220627 10:16:52.860"/>
+<status status="PASS" starttime="20220707 09:49:39.095" endtime="20220707 09:49:39.534"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220627 10:16:52.860" endtime="20220627 10:16:53.911"/>
+<status status="PASS" starttime="20220707 09:49:39.535" endtime="20220707 09:49:40.268"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:16:53.913" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]'.</msg>
-<status status="PASS" starttime="20220627 10:16:53.912" endtime="20220627 10:16:54.242"/>
+<msg timestamp="20220707 09:49:40.270" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20220707 09:49:40.269" endtime="20220707 09:49:40.568"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>${index}[make]</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:16:54.246" level="INFO">Sending key(s) ('Tesla',) to page.</msg>
-<msg timestamp="20220627 10:16:54.248" level="INFO">Sending keys Tesla</msg>
-<status status="PASS" starttime="20220627 10:16:54.244" endtime="20220627 10:16:54.896"/>
+<msg timestamp="20220707 09:49:40.576" level="INFO">Sending key(s) ('Tesla',) to page.</msg>
+<msg timestamp="20220707 09:49:40.577" level="INFO">Sending keys Tesla</msg>
+<status status="PASS" starttime="20220707 09:49:40.574" endtime="20220707 09:49:41.077"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>333ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:16:55.240" level="INFO">Slept 333 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:16:54.897" endtime="20220627 10:16:55.241"/>
+<msg timestamp="20220707 09:49:41.414" level="INFO">Slept 333 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:49:41.079" endtime="20220707 09:49:41.416"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>TAB</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:16:55.244" level="INFO">Sending key(s) ('TAB',) to page.</msg>
-<msg timestamp="20220627 10:16:55.249" level="INFO">Pressing special key TAB to browser.</msg>
-<msg timestamp="20220627 10:16:55.251" level="INFO">Releasing special key TAB.</msg>
-<status status="PASS" starttime="20220627 10:16:55.242" endtime="20220627 10:16:55.483"/>
+<msg timestamp="20220707 09:49:41.424" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg timestamp="20220707 09:49:41.428" level="INFO">Pressing special key TAB to browser.</msg>
+<msg timestamp="20220707 09:49:41.429" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20220707 09:49:41.418" endtime="20220707 09:49:41.632"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[2]/div/div</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:16:55.488" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[2]/div/div'.</msg>
-<status status="PASS" starttime="20220627 10:16:55.485" endtime="20220627 10:16:56.044"/>
+<msg timestamp="20220707 09:49:41.635" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20220707 09:49:41.633" endtime="20220707 09:49:42.108"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>500ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:16:56.548" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:16:56.045" endtime="20220627 10:16:56.549"/>
+<msg timestamp="20220707 09:49:42.611" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:49:42.109" endtime="20220707 09:49:42.614"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>${index}[model]</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:16:56.552" level="INFO">Sending key(s) ('Model 3',) to page.</msg>
-<msg timestamp="20220627 10:16:56.558" level="INFO">Sending keys Model 3</msg>
-<status status="PASS" starttime="20220627 10:16:56.550" endtime="20220627 10:16:57.133"/>
+<msg timestamp="20220707 09:49:42.636" level="INFO">Sending key(s) ('Model 3',) to page.</msg>
+<msg timestamp="20220707 09:49:42.641" level="INFO">Sending keys Model 3</msg>
+<status status="PASS" starttime="20220707 09:49:42.618" endtime="20220707 09:49:43.215"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>333ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:16:57.470" level="INFO">Slept 333 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:16:57.135" endtime="20220627 10:16:57.470"/>
+<msg timestamp="20220707 09:49:43.550" level="INFO">Slept 333 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:49:43.216" endtime="20220707 09:49:43.551"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>TAB</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:16:57.473" level="INFO">Sending key(s) ('TAB',) to page.</msg>
-<msg timestamp="20220627 10:16:57.474" level="INFO">Pressing special key TAB to browser.</msg>
-<msg timestamp="20220627 10:16:57.475" level="INFO">Releasing special key TAB.</msg>
-<status status="PASS" starttime="20220627 10:16:57.471" endtime="20220627 10:16:57.696"/>
+<msg timestamp="20220707 09:49:43.554" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg timestamp="20220707 09:49:43.557" level="INFO">Pressing special key TAB to browser.</msg>
+<msg timestamp="20220707 09:49:43.558" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20220707 09:49:43.552" endtime="20220707 09:49:43.667"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/input</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:16:57.700" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/input'.</msg>
-<status status="PASS" starttime="20220627 10:16:57.698" endtime="20220627 10:16:58.256"/>
+<msg timestamp="20220707 09:49:43.669" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/input'.</msg>
+<status status="PASS" starttime="20220707 09:49:43.667" endtime="20220707 09:49:44.007"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>500ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:16:58.763" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:16:58.257" endtime="20220627 10:16:58.763"/>
+<msg timestamp="20220707 09:49:44.512" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:49:44.008" endtime="20220707 09:49:44.512"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>${index}[max_km]</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:16:58.767" level="INFO">Sending key(s) ('20000',) to page.</msg>
-<msg timestamp="20220627 10:16:58.769" level="INFO">Sending keys 20000</msg>
-<status status="PASS" starttime="20220627 10:16:58.765" endtime="20220627 10:16:59.274"/>
+<msg timestamp="20220707 09:49:44.514" level="INFO">Sending key(s) ('20000',) to page.</msg>
+<msg timestamp="20220707 09:49:44.515" level="INFO">Sending keys 20000</msg>
+<status status="PASS" starttime="20220707 09:49:44.513" endtime="20220707 09:49:45.061"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>500ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:16:59.776" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:16:59.275" endtime="20220627 10:16:59.777"/>
+<msg timestamp="20220707 09:49:45.564" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:49:45.062" endtime="20220707 09:49:45.565"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/div[1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:16:59.779" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/div[1]'.</msg>
-<status status="PASS" starttime="20220627 10:16:59.778" endtime="20220627 10:16:59.989"/>
+<msg timestamp="20220707 09:49:45.568" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/div[1]'.</msg>
+<status status="PASS" starttime="20220707 09:49:45.566" endtime="20220707 09:49:45.818"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>333ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:00.323" level="INFO">Slept 333 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:16:59.989" endtime="20220627 10:17:00.324"/>
+<msg timestamp="20220707 09:49:46.154" level="INFO">Slept 333 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:49:45.819" endtime="20220707 09:49:46.154"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[2]/div[1]/button</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:17:00.325" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[2]/div[1]/button'.</msg>
-<status status="PASS" starttime="20220627 10:17:00.324" endtime="20220627 10:17:00.755"/>
+<msg timestamp="20220707 09:49:46.156" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[2]/div[1]/button'.</msg>
+<status status="PASS" starttime="20220707 09:49:46.155" endtime="20220707 09:49:46.596"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div</arg>
-<arg>10s</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220627 10:17:00.756" endtime="20220627 10:17:13.116"/>
+<status status="PASS" starttime="20220707 09:49:46.597" endtime="20220707 09:49:59.045"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:16.119" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220627 10:17:13.117" endtime="20220627 10:17:16.120"/>
+<msg timestamp="20220707 09:50:02.048" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 09:49:59.047" endtime="20220707 09:50:02.049"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:17:16.124" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div'.</msg>
-<status status="PASS" starttime="20220627 10:17:16.121" endtime="20220627 10:17:16.863"/>
+<msg timestamp="20220707 09:50:02.051" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20220707 09:50:02.050" endtime="20220707 09:50:02.747"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:19.867" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220627 10:17:16.864" endtime="20220627 10:17:19.868"/>
+<msg timestamp="20220707 09:50:05.750" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 09:50:02.748" endtime="20220707 09:50:05.751"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[8]/div/div/div/div[2]/div/div[6]/p</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:17:19.871" level="INFO">Clicking element 'xpath:/html/body/div[8]/div/div/div/div[2]/div/div[6]/p'.</msg>
-<status status="PASS" starttime="20220627 10:17:19.870" endtime="20220627 10:17:20.999"/>
+<msg timestamp="20220707 09:50:05.753" level="INFO">Clicking element 'xpath:/html/body/div[8]/div/div/div/div[2]/div/div[6]/p'.</msg>
+<status status="PASS" starttime="20220707 09:50:05.752" endtime="20220707 09:50:07.091"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:26.002" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20220627 10:17:21.000" endtime="20220627 10:17:26.002"/>
+<msg timestamp="20220707 09:50:10.094" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 09:50:07.092" endtime="20220707 09:50:10.094"/>
 </kw>
-<status status="PASS" starttime="20220627 10:16:40.442" endtime="20220627 10:17:26.003"/>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${name}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/h6</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:50:10.824" level="INFO">${name} = Tesla Model 3 Plus RWD 224 kW</msg>
+<status status="PASS" starttime="20220707 09:50:10.095" endtime="20220707 09:50:10.825"/>
 </kw>
-<status status="PASS" starttime="20220627 10:16:40.441" endtime="20220627 10:17:26.003"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:50:12.828" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:50:10.826" endtime="20220707 09:50:12.829"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${total_km}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[1]/div[1]/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:50:12.903" level="INFO">${total_km} = 14 000 km</msg>
+<status status="PASS" starttime="20220707 09:50:12.830" endtime="20220707 09:50:12.903"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:50:14.906" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:50:12.904" endtime="20220707 09:50:14.907"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${seller}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[3]/div[1]/div/div[1]/div/div/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:50:14.989" level="INFO">${seller} = Dealership</msg>
+<status status="PASS" starttime="20220707 09:50:14.908" endtime="20220707 09:50:14.989"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:50:16.991" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:50:14.990" endtime="20220707 09:50:16.992"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${country}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[3]/div[1]/div/div[2]/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:50:17.063" level="INFO">${country} = Italy</msg>
+<status status="PASS" starttime="20220707 09:50:16.992" endtime="20220707 09:50:17.063"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:50:19.067" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:50:17.064" endtime="20220707 09:50:19.067"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${fuel}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[1]/div[5]/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:50:19.119" level="INFO">${fuel} = Electric</msg>
+<status status="PASS" starttime="20220707 09:50:19.068" endtime="20220707 09:50:19.119"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:50:21.122" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:50:19.121" endtime="20220707 09:50:21.124"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${transmission}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[1]/div[4]/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:50:21.189" level="INFO">${transmission} = Automatic</msg>
+<status status="PASS" starttime="20220707 09:50:21.125" endtime="20220707 09:50:21.189"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:50:23.190" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:50:21.190" endtime="20220707 09:50:23.191"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${price}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[3]/div[2]/div/div[2]/div[2]/div/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:50:23.258" level="INFO">${price} = 45 449 €</msg>
+<status status="PASS" starttime="20220707 09:50:23.192" endtime="20220707 09:50:23.258"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:50:25.260" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:50:23.259" endtime="20220707 09:50:25.260"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${car_dict}</var>
+<arg>name=${name}</arg>
+<arg>total_km=${total_km}</arg>
+<arg>seller=${seller}</arg>
+<arg>country=${country}</arg>
+<arg>fuel=${fuel}</arg>
+<arg>transmission=${transmission}</arg>
+<arg>price=${price}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220707 09:50:25.265" level="INFO">${car_dict} = {'name': 'Tesla Model 3 Plus RWD 224 kW', 'total_km': '14 000 km', 'seller': 'Dealership', 'country': 'Italy', 'fuel': 'Electric', 'transmission': 'Automatic', 'price': '45 449 €'}</msg>
+<status status="PASS" starttime="20220707 09:50:25.261" endtime="20220707 09:50:25.265"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${car_dict}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220707 09:50:25.266" endtime="20220707 09:50:25.269"/>
+</kw>
+<kw name="Append To Excel">
+<arg>${car_dict}</arg>
+<kw name="Open Workbook" library="RPA.Excel.Files">
+<arg>/home/maaofficial/Documents/test_report_2.xlsx</arg>
+<doc>Open an existing Excel workbook.</doc>
+<msg timestamp="20220707 09:50:25.313" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7fdd2ab2df90&gt;</msg>
+<status status="PASS" starttime="20220707 09:50:25.272" endtime="20220707 09:50:25.314"/>
+</kw>
+<kw name="Append Rows To Worksheet" library="RPA.Excel.Files">
+<arg>${car_dict}</arg>
+<arg>header=True</arg>
+<doc>Append values to the end of the worksheet.</doc>
+<status status="PASS" starttime="20220707 09:50:25.314" endtime="20220707 09:50:25.316"/>
+</kw>
+<kw name="Save Workbook" library="RPA.Excel.Files">
+<doc>Save the active workbook.</doc>
+<status status="PASS" starttime="20220707 09:50:25.317" endtime="20220707 09:50:25.335"/>
+</kw>
+<status status="PASS" starttime="20220707 09:50:25.269" endtime="20220707 09:50:25.336"/>
+</kw>
+<status status="PASS" starttime="20220707 09:49:28.198" endtime="20220707 09:50:25.337"/>
+</kw>
+<status status="PASS" starttime="20220707 09:49:28.197" endtime="20220707 09:50:25.338"/>
 </iter>
 <iter>
 <var name="${index}">{'make': 'Ford', 'model': 'Mustang', 'max_km': 60000}</var>
@@ -216,165 +358,295 @@ if none is already installed.</doc>
 <kw name="Go To" library="RPA.Browser.Selenium">
 <arg>%{C_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220627 10:17:26.006" level="INFO">Opening url 'https://carvago.com/'</msg>
-<status status="PASS" starttime="20220627 10:17:26.005" endtime="20220627 10:17:36.629"/>
+<msg timestamp="20220707 09:50:25.343" level="INFO">Opening url 'https://carvago.com/'</msg>
+<status status="PASS" starttime="20220707 09:50:25.342" endtime="20220707 09:50:42.245"/>
 </kw>
 <kw name="Maximize Browser Window" library="RPA.Browser.Selenium">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220627 10:17:36.642" endtime="20220627 10:17:36.675"/>
+<status status="PASS" starttime="20220707 09:50:42.247" endtime="20220707 09:50:42.268"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220627 10:17:36.676" endtime="20220627 10:17:37.005"/>
+<status status="PASS" starttime="20220707 09:50:42.269" endtime="20220707 09:50:42.540"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:17:37.008" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]'.</msg>
-<status status="PASS" starttime="20220627 10:17:37.006" endtime="20220627 10:17:37.330"/>
+<msg timestamp="20220707 09:50:42.543" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20220707 09:50:42.541" endtime="20220707 09:50:42.978"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>${index}[make]</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:17:37.333" level="INFO">Sending key(s) ('Ford',) to page.</msg>
-<msg timestamp="20220627 10:17:37.335" level="INFO">Sending keys Ford</msg>
-<status status="PASS" starttime="20220627 10:17:37.331" endtime="20220627 10:17:38.066"/>
+<msg timestamp="20220707 09:50:42.986" level="INFO">Sending key(s) ('Ford',) to page.</msg>
+<msg timestamp="20220707 09:50:42.995" level="INFO">Sending keys Ford</msg>
+<status status="PASS" starttime="20220707 09:50:42.979" endtime="20220707 09:50:43.519"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>333ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:38.402" level="INFO">Slept 333 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:17:38.068" endtime="20220627 10:17:38.403"/>
+<msg timestamp="20220707 09:50:43.855" level="INFO">Slept 333 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:50:43.520" endtime="20220707 09:50:43.855"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>TAB</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:17:38.406" level="INFO">Sending key(s) ('TAB',) to page.</msg>
-<msg timestamp="20220627 10:17:38.408" level="INFO">Pressing special key TAB to browser.</msg>
-<msg timestamp="20220627 10:17:38.408" level="INFO">Releasing special key TAB.</msg>
-<status status="PASS" starttime="20220627 10:17:38.404" endtime="20220627 10:17:38.737"/>
+<msg timestamp="20220707 09:50:43.859" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg timestamp="20220707 09:50:43.859" level="INFO">Pressing special key TAB to browser.</msg>
+<msg timestamp="20220707 09:50:43.860" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20220707 09:50:43.857" endtime="20220707 09:50:44.027"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[2]/div/div</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:17:38.753" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[2]/div/div'.</msg>
-<status status="PASS" starttime="20220627 10:17:38.751" endtime="20220627 10:17:39.173"/>
+<msg timestamp="20220707 09:50:44.030" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20220707 09:50:44.029" endtime="20220707 09:50:44.604"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>500ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:39.677" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:17:39.175" endtime="20220627 10:17:39.678"/>
+<msg timestamp="20220707 09:50:45.112" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:50:44.605" endtime="20220707 09:50:45.113"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>${index}[model]</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:17:39.684" level="INFO">Sending key(s) ('Mustang',) to page.</msg>
-<msg timestamp="20220627 10:17:39.686" level="INFO">Sending keys Mustang</msg>
-<status status="PASS" starttime="20220627 10:17:39.679" endtime="20220627 10:17:40.499"/>
+<msg timestamp="20220707 09:50:45.118" level="INFO">Sending key(s) ('Mustang',) to page.</msg>
+<msg timestamp="20220707 09:50:45.119" level="INFO">Sending keys Mustang</msg>
+<status status="PASS" starttime="20220707 09:50:45.114" endtime="20220707 09:50:45.893"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>333ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:40.834" level="INFO">Slept 333 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:17:40.500" endtime="20220627 10:17:40.835"/>
+<msg timestamp="20220707 09:50:46.228" level="INFO">Slept 333 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:50:45.894" endtime="20220707 09:50:46.229"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>TAB</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:17:40.837" level="INFO">Sending key(s) ('TAB',) to page.</msg>
-<msg timestamp="20220627 10:17:40.838" level="INFO">Pressing special key TAB to browser.</msg>
-<msg timestamp="20220627 10:17:40.838" level="INFO">Releasing special key TAB.</msg>
-<status status="PASS" starttime="20220627 10:17:40.836" endtime="20220627 10:17:41.105"/>
+<msg timestamp="20220707 09:50:46.232" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg timestamp="20220707 09:50:46.232" level="INFO">Pressing special key TAB to browser.</msg>
+<msg timestamp="20220707 09:50:46.233" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20220707 09:50:46.230" endtime="20220707 09:50:46.420"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/input</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:17:41.110" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/input'.</msg>
-<status status="PASS" starttime="20220627 10:17:41.108" endtime="20220627 10:17:41.628"/>
+<msg timestamp="20220707 09:50:46.423" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/input'.</msg>
+<status status="PASS" starttime="20220707 09:50:46.421" endtime="20220707 09:50:46.787"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>500ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:42.137" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:17:41.630" endtime="20220627 10:17:42.138"/>
+<msg timestamp="20220707 09:50:47.290" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:50:46.789" endtime="20220707 09:50:47.291"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>${index}[max_km]</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:17:42.141" level="INFO">Sending key(s) ('60000',) to page.</msg>
-<msg timestamp="20220627 10:17:42.141" level="INFO">Sending keys 60000</msg>
-<status status="PASS" starttime="20220627 10:17:42.139" endtime="20220627 10:17:42.538"/>
+<msg timestamp="20220707 09:50:47.294" level="INFO">Sending key(s) ('60000',) to page.</msg>
+<msg timestamp="20220707 09:50:47.295" level="INFO">Sending keys 60000</msg>
+<status status="PASS" starttime="20220707 09:50:47.292" endtime="20220707 09:50:47.717"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>500ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:43.040" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:17:42.539" endtime="20220627 10:17:43.041"/>
+<msg timestamp="20220707 09:50:48.222" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:50:47.720" endtime="20220707 09:50:48.223"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/div[1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:17:43.044" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/div[1]'.</msg>
-<status status="PASS" starttime="20220627 10:17:43.043" endtime="20220627 10:17:43.244"/>
+<msg timestamp="20220707 09:50:48.226" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/div[1]'.</msg>
+<status status="PASS" starttime="20220707 09:50:48.224" endtime="20220707 09:50:48.396"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>333ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:17:43.578" level="INFO">Slept 333 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:17:43.244" endtime="20220627 10:17:43.579"/>
+<msg timestamp="20220707 09:50:48.733" level="INFO">Slept 333 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:50:48.397" endtime="20220707 09:50:48.734"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[2]/div[1]/button</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:17:43.581" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[2]/div[1]/button'.</msg>
-<status status="PASS" starttime="20220627 10:17:43.579" endtime="20220627 10:17:43.980"/>
+<msg timestamp="20220707 09:50:48.736" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[2]/div[1]/button'.</msg>
+<status status="PASS" starttime="20220707 09:50:48.735" endtime="20220707 09:50:49.137"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div</arg>
-<arg>10s</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220627 10:17:43.981" endtime="20220627 10:17:58.077"/>
+<status status="PASS" starttime="20220707 09:50:49.138" endtime="20220707 09:51:05.497"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:01.083" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220627 10:17:58.079" endtime="20220627 10:18:01.084"/>
+<msg timestamp="20220707 09:51:08.501" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:05.499" endtime="20220707 09:51:08.501"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:18:01.087" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div'.</msg>
-<status status="PASS" starttime="20220627 10:18:01.085" endtime="20220627 10:18:01.673"/>
+<msg timestamp="20220707 09:51:08.503" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20220707 09:51:08.502" endtime="20220707 09:51:09.359"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:04.677" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220627 10:18:01.675" endtime="20220627 10:18:04.677"/>
+<msg timestamp="20220707 09:51:12.363" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:09.361" endtime="20220707 09:51:12.364"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[8]/div/div/div/div[2]/div/div[6]/p</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:18:04.678" level="INFO">Clicking element 'xpath:/html/body/div[8]/div/div/div/div[2]/div/div[6]/p'.</msg>
-<status status="PASS" starttime="20220627 10:18:04.678" endtime="20220627 10:18:06.011"/>
+<msg timestamp="20220707 09:51:12.367" level="INFO">Clicking element 'xpath:/html/body/div[8]/div/div/div/div[2]/div/div[6]/p'.</msg>
+<status status="PASS" starttime="20220707 09:51:12.365" endtime="20220707 09:51:13.980"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:11.014" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20220627 10:18:06.013" endtime="20220627 10:18:11.015"/>
+<msg timestamp="20220707 09:51:16.984" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:13.981" endtime="20220707 09:51:16.986"/>
 </kw>
-<status status="PASS" starttime="20220627 10:17:26.004" endtime="20220627 10:18:11.016"/>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${name}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/h6</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:51:19.395" level="INFO">${name} = Ford Mustang 227 kW</msg>
+<status status="PASS" starttime="20220707 09:51:16.987" endtime="20220707 09:51:19.396"/>
 </kw>
-<status status="PASS" starttime="20220627 10:17:26.004" endtime="20220627 10:18:11.016"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:51:21.399" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:19.397" endtime="20220707 09:51:21.400"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${total_km}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[1]/div[1]/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:51:21.571" level="INFO">${total_km} = 41 630 km</msg>
+<status status="PASS" starttime="20220707 09:51:21.401" endtime="20220707 09:51:21.571"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:51:23.573" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:21.572" endtime="20220707 09:51:23.574"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${seller}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[3]/div[1]/div/div[1]/div/div/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:51:23.666" level="INFO">${seller} = Dealership</msg>
+<status status="PASS" starttime="20220707 09:51:23.575" endtime="20220707 09:51:23.666"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:51:25.668" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:23.667" endtime="20220707 09:51:25.669"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${country}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[3]/div[1]/div/div[2]/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:51:25.740" level="INFO">${country} = Poland</msg>
+<status status="PASS" starttime="20220707 09:51:25.671" endtime="20220707 09:51:25.740"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:51:27.741" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:25.740" endtime="20220707 09:51:27.742"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${fuel}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[1]/div[5]/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:51:27.821" level="INFO">${fuel} = Petrol</msg>
+<status status="PASS" starttime="20220707 09:51:27.743" endtime="20220707 09:51:27.821"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:51:29.823" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:27.821" endtime="20220707 09:51:29.823"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${transmission}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[1]/div[4]/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:51:29.876" level="INFO">${transmission} = Automatic</msg>
+<status status="PASS" starttime="20220707 09:51:29.825" endtime="20220707 09:51:29.877"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:51:31.879" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:29.878" endtime="20220707 09:51:31.879"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${price}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[3]/div[2]/div/div[2]/div[2]/div/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:51:31.931" level="INFO">${price} = 20 599 €</msg>
+<status status="PASS" starttime="20220707 09:51:31.880" endtime="20220707 09:51:31.932"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:51:33.934" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:51:31.933" endtime="20220707 09:51:33.934"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${car_dict}</var>
+<arg>name=${name}</arg>
+<arg>total_km=${total_km}</arg>
+<arg>seller=${seller}</arg>
+<arg>country=${country}</arg>
+<arg>fuel=${fuel}</arg>
+<arg>transmission=${transmission}</arg>
+<arg>price=${price}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220707 09:51:33.937" level="INFO">${car_dict} = {'name': 'Ford Mustang 227 kW', 'total_km': '41 630 km', 'seller': 'Dealership', 'country': 'Poland', 'fuel': 'Petrol', 'transmission': 'Automatic', 'price': '20 599 €'}</msg>
+<status status="PASS" starttime="20220707 09:51:33.935" endtime="20220707 09:51:33.937"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${car_dict}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220707 09:51:33.937" endtime="20220707 09:51:33.938"/>
+</kw>
+<kw name="Append To Excel">
+<arg>${car_dict}</arg>
+<kw name="Open Workbook" library="RPA.Excel.Files">
+<arg>/home/maaofficial/Documents/test_report_2.xlsx</arg>
+<doc>Open an existing Excel workbook.</doc>
+<msg timestamp="20220707 09:51:33.941" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7fdd2ab2df90&gt;</msg>
+<msg timestamp="20220707 09:51:33.985" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7fdd2ab2dcd0&gt;</msg>
+<status status="PASS" starttime="20220707 09:51:33.940" endtime="20220707 09:51:33.986"/>
+</kw>
+<kw name="Append Rows To Worksheet" library="RPA.Excel.Files">
+<arg>${car_dict}</arg>
+<arg>header=True</arg>
+<doc>Append values to the end of the worksheet.</doc>
+<status status="PASS" starttime="20220707 09:51:33.986" endtime="20220707 09:51:33.988"/>
+</kw>
+<kw name="Save Workbook" library="RPA.Excel.Files">
+<doc>Save the active workbook.</doc>
+<status status="PASS" starttime="20220707 09:51:33.989" endtime="20220707 09:51:34.008"/>
+</kw>
+<status status="PASS" starttime="20220707 09:51:33.939" endtime="20220707 09:51:34.009"/>
+</kw>
+<status status="PASS" starttime="20220707 09:50:25.341" endtime="20220707 09:51:34.010"/>
+</kw>
+<status status="PASS" starttime="20220707 09:50:25.340" endtime="20220707 09:51:34.011"/>
 </iter>
 <iter>
 <var name="${index}">{'make': 'Porsche', 'model': 911, 'max_km': 20000}</var>
@@ -383,174 +655,308 @@ if none is already installed.</doc>
 <kw name="Go To" library="RPA.Browser.Selenium">
 <arg>%{C_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220627 10:18:11.021" level="INFO">Opening url 'https://carvago.com/'</msg>
-<status status="PASS" starttime="20220627 10:18:11.019" endtime="20220627 10:18:23.990"/>
+<msg timestamp="20220707 09:51:34.017" level="INFO">Opening url 'https://carvago.com/'</msg>
+<status status="PASS" starttime="20220707 09:51:34.015" endtime="20220707 09:51:42.522"/>
 </kw>
 <kw name="Maximize Browser Window" library="RPA.Browser.Selenium">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220627 10:18:23.991" endtime="20220627 10:18:24.038"/>
+<status status="PASS" starttime="20220707 09:51:42.523" endtime="20220707 09:51:42.851"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220627 10:18:24.039" endtime="20220627 10:18:24.174"/>
+<status status="PASS" starttime="20220707 09:51:42.855" endtime="20220707 09:51:42.936"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:18:24.176" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]'.</msg>
-<status status="PASS" starttime="20220627 10:18:24.175" endtime="20220627 10:18:24.801"/>
+<msg timestamp="20220707 09:51:42.938" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[1]/div/div/div/div/div[1]/div[2]'.</msg>
+<status status="PASS" starttime="20220707 09:51:42.937" endtime="20220707 09:51:43.229"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>${index}[make]</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:18:24.811" level="INFO">Sending key(s) ('Porsche',) to page.</msg>
-<msg timestamp="20220627 10:18:24.815" level="INFO">Sending keys Porsche</msg>
-<status status="PASS" starttime="20220627 10:18:24.802" endtime="20220627 10:18:25.799"/>
+<msg timestamp="20220707 09:51:43.231" level="INFO">Sending key(s) ('Porsche',) to page.</msg>
+<msg timestamp="20220707 09:51:43.232" level="INFO">Sending keys Porsche</msg>
+<status status="PASS" starttime="20220707 09:51:43.229" endtime="20220707 09:51:44.030"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>333ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:26.134" level="INFO">Slept 333 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:18:25.800" endtime="20220627 10:18:26.135"/>
+<msg timestamp="20220707 09:51:44.367" level="INFO">Slept 333 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:51:44.032" endtime="20220707 09:51:44.368"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>TAB</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:18:26.137" level="INFO">Sending key(s) ('TAB',) to page.</msg>
-<msg timestamp="20220627 10:18:26.138" level="INFO">Pressing special key TAB to browser.</msg>
-<msg timestamp="20220627 10:18:26.138" level="INFO">Releasing special key TAB.</msg>
-<status status="PASS" starttime="20220627 10:18:26.136" endtime="20220627 10:18:26.306"/>
+<msg timestamp="20220707 09:51:44.372" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg timestamp="20220707 09:51:44.373" level="INFO">Pressing special key TAB to browser.</msg>
+<msg timestamp="20220707 09:51:44.373" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20220707 09:51:44.369" endtime="20220707 09:51:44.533"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[2]/div/div</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:18:26.308" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[2]/div/div'.</msg>
-<status status="PASS" starttime="20220627 10:18:26.307" endtime="20220627 10:18:26.571"/>
+<msg timestamp="20220707 09:51:44.536" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20220707 09:51:44.535" endtime="20220707 09:51:45.016"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>500ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:27.075" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:18:26.572" endtime="20220627 10:18:27.075"/>
+<msg timestamp="20220707 09:51:45.521" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:51:45.018" endtime="20220707 09:51:45.521"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>${index}[model]</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:18:27.077" level="INFO">Sending key(s) ('911',) to page.</msg>
-<msg timestamp="20220627 10:18:27.078" level="INFO">Sending keys 911</msg>
-<status status="PASS" starttime="20220627 10:18:27.076" endtime="20220627 10:18:27.394"/>
+<msg timestamp="20220707 09:51:45.525" level="INFO">Sending key(s) ('911',) to page.</msg>
+<msg timestamp="20220707 09:51:45.526" level="INFO">Sending keys 911</msg>
+<status status="PASS" starttime="20220707 09:51:45.522" endtime="20220707 09:51:45.764"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>333ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:27.729" level="INFO">Slept 333 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:18:27.394" endtime="20220627 10:18:27.730"/>
+<msg timestamp="20220707 09:51:46.099" level="INFO">Slept 333 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:51:45.764" endtime="20220707 09:51:46.101"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>TAB</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:18:27.735" level="INFO">Sending key(s) ('TAB',) to page.</msg>
-<msg timestamp="20220627 10:18:27.738" level="INFO">Pressing special key TAB to browser.</msg>
-<msg timestamp="20220627 10:18:27.739" level="INFO">Releasing special key TAB.</msg>
-<status status="PASS" starttime="20220627 10:18:27.732" endtime="20220627 10:18:27.885"/>
+<msg timestamp="20220707 09:51:46.112" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg timestamp="20220707 09:51:46.115" level="INFO">Pressing special key TAB to browser.</msg>
+<msg timestamp="20220707 09:51:46.116" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20220707 09:51:46.107" endtime="20220707 09:51:46.296"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/input</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:18:27.887" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/input'.</msg>
-<status status="PASS" starttime="20220627 10:18:27.885" endtime="20220627 10:18:28.511"/>
+<msg timestamp="20220707 09:51:46.302" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/input'.</msg>
+<status status="PASS" starttime="20220707 09:51:46.301" endtime="20220707 09:51:46.661"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>500ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:29.023" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:18:28.513" endtime="20220627 10:18:29.024"/>
+<msg timestamp="20220707 09:51:47.165" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:51:46.662" endtime="20220707 09:51:47.166"/>
 </kw>
 <kw name="Press Keys" library="RPA.Browser.Selenium">
 <arg>NONE</arg>
 <arg>${index}[max_km]</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220627 10:18:29.028" level="INFO">Sending key(s) ('20000',) to page.</msg>
-<msg timestamp="20220627 10:18:29.029" level="INFO">Sending keys 20000</msg>
-<status status="PASS" starttime="20220627 10:18:29.025" endtime="20220627 10:18:29.648"/>
+<msg timestamp="20220707 09:51:47.169" level="INFO">Sending key(s) ('20000',) to page.</msg>
+<msg timestamp="20220707 09:51:47.170" level="INFO">Sending keys 20000</msg>
+<status status="PASS" starttime="20220707 09:51:47.167" endtime="20220707 09:51:47.560"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>500ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:30.150" level="INFO">Slept 500 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:18:29.649" endtime="20220627 10:18:30.151"/>
+<msg timestamp="20220707 09:51:48.063" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:51:47.561" endtime="20220707 09:51:48.064"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/div[1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:18:30.155" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/div[1]'.</msg>
-<status status="PASS" starttime="20220627 10:18:30.153" endtime="20220627 10:18:30.580"/>
+<msg timestamp="20220707 09:51:48.069" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[1]/div[3]/div/div/div[1]'.</msg>
+<status status="PASS" starttime="20220707 09:51:48.066" endtime="20220707 09:51:48.260"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>333ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:30.916" level="INFO">Slept 333 milliseconds</msg>
-<status status="PASS" starttime="20220627 10:18:30.582" endtime="20220627 10:18:30.917"/>
+<msg timestamp="20220707 09:51:48.595" level="INFO">Slept 333 milliseconds</msg>
+<status status="PASS" starttime="20220707 09:51:48.261" endtime="20220707 09:51:48.595"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[2]/div[1]/button</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:18:30.918" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[2]/div[1]/button'.</msg>
-<status status="PASS" starttime="20220627 10:18:30.917" endtime="20220627 10:18:31.284"/>
+<msg timestamp="20220707 09:51:48.597" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[1]/div[1]/div[1]/div/div[1]/form/div[2]/div[1]/button'.</msg>
+<status status="PASS" starttime="20220707 09:51:48.596" endtime="20220707 09:51:49.176"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div</arg>
-<arg>10s</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220627 10:18:31.285" endtime="20220627 10:18:45.992"/>
+<status status="PASS" starttime="20220707 09:51:49.177" endtime="20220707 09:52:03.377"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:48.995" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220627 10:18:45.993" endtime="20220627 10:18:48.996"/>
+<msg timestamp="20220707 09:52:06.379" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:03.378" endtime="20220707 09:52:06.380"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:18:48.999" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div'.</msg>
-<status status="PASS" starttime="20220627 10:18:48.997" endtime="20220627 10:18:49.671"/>
+<msg timestamp="20220707 09:52:06.382" level="INFO">Clicking element 'xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[1]/div[2]/div[1]/div[2]/div/div'.</msg>
+<status status="PASS" starttime="20220707 09:52:06.380" endtime="20220707 09:52:07.000"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:52.674" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20220627 10:18:49.673" endtime="20220627 10:18:52.675"/>
+<msg timestamp="20220707 09:52:10.003" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:07.001" endtime="20220707 09:52:10.004"/>
 </kw>
 <kw name="Click Element" library="RPA.Browser.Selenium">
 <arg>xpath:/html/body/div[8]/div/div/div/div[2]/div/div[6]/p</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 10:18:52.679" level="INFO">Clicking element 'xpath:/html/body/div[8]/div/div/div/div[2]/div/div[6]/p'.</msg>
-<status status="PASS" starttime="20220627 10:18:52.677" endtime="20220627 10:18:53.954"/>
+<msg timestamp="20220707 09:52:10.007" level="INFO">Clicking element 'xpath:/html/body/div[8]/div/div/div/div[2]/div/div[6]/p'.</msg>
+<status status="PASS" starttime="20220707 09:52:10.005" endtime="20220707 09:52:11.249"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 10:18:58.957" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20220627 10:18:53.955" endtime="20220627 10:18:58.957"/>
+<msg timestamp="20220707 09:52:14.251" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:11.250" endtime="20220707 09:52:14.252"/>
 </kw>
-<status status="PASS" starttime="20220627 10:18:11.018" endtime="20220627 10:18:58.958"/>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${name}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/h6</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:52:17.758" level="INFO">${name} = Porsche 997 3.6 254 kW</msg>
+<status status="PASS" starttime="20220707 09:52:14.252" endtime="20220707 09:52:17.759"/>
 </kw>
-<status status="PASS" starttime="20220627 10:18:11.017" endtime="20220627 10:18:58.959"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:52:19.760" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:17.760" endtime="20220707 09:52:19.761"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${total_km}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[1]/div[1]/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:52:19.814" level="INFO">${total_km} = 16 000 km</msg>
+<status status="PASS" starttime="20220707 09:52:19.762" endtime="20220707 09:52:19.815"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:52:21.817" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:19.815" endtime="20220707 09:52:21.818"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${seller}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[3]/div[1]/div/div[1]/div/div/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:52:21.892" level="INFO">${seller} = Used cars seller</msg>
+<status status="PASS" starttime="20220707 09:52:21.819" endtime="20220707 09:52:21.893"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:52:23.894" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:21.893" endtime="20220707 09:52:23.895"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${country}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[3]/div[1]/div/div[2]/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:52:23.957" level="INFO">${country} = Germany</msg>
+<status status="PASS" starttime="20220707 09:52:23.897" endtime="20220707 09:52:23.958"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:52:25.960" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:23.959" endtime="20220707 09:52:25.960"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${fuel}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[1]/div[5]/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:52:26.039" level="INFO">${fuel} = Petrol</msg>
+<status status="PASS" starttime="20220707 09:52:25.961" endtime="20220707 09:52:26.039"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:52:28.042" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:26.040" endtime="20220707 09:52:28.043"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${transmission}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[1]/div[4]/span[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:52:28.124" level="INFO">${transmission} = Manual</msg>
+<status status="PASS" starttime="20220707 09:52:28.044" endtime="20220707 09:52:28.124"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:52:30.126" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:28.125" endtime="20220707 09:52:30.127"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${price}</var>
+<arg>xpath:/html/body/div[1]/div/main/div[2]/div[2]/section/div/div[2]/div[1]/div/a/div/div[2]/div[3]/div[2]/div/div[2]/div[2]/div/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220707 09:52:30.209" level="INFO">${price} = 80 299 €</msg>
+<status status="PASS" starttime="20220707 09:52:30.129" endtime="20220707 09:52:30.209"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220707 09:52:32.212" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220707 09:52:30.210" endtime="20220707 09:52:32.213"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${car_dict}</var>
+<arg>name=${name}</arg>
+<arg>total_km=${total_km}</arg>
+<arg>seller=${seller}</arg>
+<arg>country=${country}</arg>
+<arg>fuel=${fuel}</arg>
+<arg>transmission=${transmission}</arg>
+<arg>price=${price}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220707 09:52:32.221" level="INFO">${car_dict} = {'name': 'Porsche 997 3.6 254 kW', 'total_km': '16 000 km', 'seller': 'Used cars seller', 'country': 'Germany', 'fuel': 'Petrol', 'transmission': 'Manual', 'price': '80 299 €'}</msg>
+<status status="PASS" starttime="20220707 09:52:32.214" endtime="20220707 09:52:32.221"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${car_dict}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220707 09:52:32.223" endtime="20220707 09:52:32.225"/>
+</kw>
+<kw name="Append To Excel">
+<arg>${car_dict}</arg>
+<kw name="Open Workbook" library="RPA.Excel.Files">
+<arg>/home/maaofficial/Documents/test_report_2.xlsx</arg>
+<doc>Open an existing Excel workbook.</doc>
+<msg timestamp="20220707 09:52:32.232" level="INFO">Closing workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7fdd2ab2dcd0&gt;</msg>
+<msg timestamp="20220707 09:52:32.283" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x7fdd2af58f50&gt;</msg>
+<status status="PASS" starttime="20220707 09:52:32.230" endtime="20220707 09:52:32.284"/>
+</kw>
+<kw name="Append Rows To Worksheet" library="RPA.Excel.Files">
+<arg>${car_dict}</arg>
+<arg>header=True</arg>
+<doc>Append values to the end of the worksheet.</doc>
+<status status="PASS" starttime="20220707 09:52:32.284" endtime="20220707 09:52:32.286"/>
+</kw>
+<kw name="Save Workbook" library="RPA.Excel.Files">
+<doc>Save the active workbook.</doc>
+<status status="PASS" starttime="20220707 09:52:32.287" endtime="20220707 09:52:32.308"/>
+</kw>
+<status status="PASS" starttime="20220707 09:52:32.227" endtime="20220707 09:52:32.308"/>
+</kw>
+<status status="PASS" starttime="20220707 09:51:34.013" endtime="20220707 09:52:32.309"/>
+</kw>
+<status status="PASS" starttime="20220707 09:51:34.012" endtime="20220707 09:52:32.310"/>
 </iter>
-<status status="PASS" starttime="20220627 10:16:40.440" endtime="20220627 10:18:58.960"/>
+<status status="PASS" starttime="20220707 09:49:28.196" endtime="20220707 09:52:32.310"/>
 </for>
-<status status="PASS" starttime="20220627 10:16:40.352" endtime="20220627 10:18:58.961"/>
+<status status="PASS" starttime="20220707 09:49:28.102" endtime="20220707 09:52:32.311"/>
 </kw>
-<status status="PASS" starttime="20220627 10:16:38.143" endtime="20220627 10:18:58.964"/>
+<kw name="Close Browser" library="RPA.Browser.Selenium">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220707 09:52:32.312" endtime="20220707 09:52:32.598"/>
+</kw>
+<status status="PASS" starttime="20220707 09:49:25.995" endtime="20220707 09:52:32.599"/>
 </test>
 <doc>Template robot main suite.</doc>
-<status status="PASS" starttime="20220627 10:16:35.785" endtime="20220627 10:18:58.969"/>
+<status status="PASS" starttime="20220707 09:49:23.578" endtime="20220707 09:52:32.603"/>
 </suite>
 <statistics>
 <total>
@@ -563,5 +969,23 @@ if none is already installed.</doc>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220707 09:49:23.923" level="ERROR">Error in file '/home/maaofficial/Documents/Automation/RobotFramework/test_robot/tasks.robot' on line 5: Importing library 'MyLibrary' failed: ModuleNotFoundError: No module named 'webdriver_manager'
+Traceback (most recent call last):
+  File "/home/maaofficial/Documents/Automation/RobotFramework/test_robot/libraries/MyLibrary.py", line 3, in &lt;module&gt;
+    from webdriver_manager.chrome import ChromeDriverManager
+PYTHONPATH:
+  /home/maaofficial/Documents/Automation/RobotFramework/test_robot/keywords
+  /home/maaofficial/Documents/Automation/RobotFramework/test_robot/libraries
+  /home/maaofficial/Documents/Automation/RobotFramework/test_robot/variables
+  /home/maaofficial/.vscode/extensions/robocorp.robotframework-lsp-0.48.2/src/robotframework_debug_adapter
+  /home/maaofficial/Documents/Automation/RobotFramework/test_robot/keywords
+  /home/maaofficial/Documents/Automation/RobotFramework/test_robot/libraries
+  /home/maaofficial/Documents/Automation/RobotFramework/test_robot/variables
+  /home/maaofficial/.vscode/extensions/robocorp.robotframework-lsp-0.48.2/src
+  /home/maaofficial/.vscode/extensions/robocorp.robotframework-lsp-0.48.2/src/robotframework_ls/vendored
+  /home/maaofficial/.robocorp/holotree/b1f3c244e_1c0bc041/lib/python37.zip
+  /home/maaofficial/.robocorp/holotree/b1f3c244e_1c0bc041/lib/python3.7
+  /home/maaofficial/.robocorp/holotree/b1f3c244e_1c0bc041/lib/python3.7/lib-dynload
+  /home/maaofficial/.robocorp/holotree/b1f3c244e_1c0bc041/lib/python3.7/site-packages</msg>
 </errors>
 </robot>
